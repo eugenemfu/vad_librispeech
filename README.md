@@ -4,19 +4,21 @@
 
 To infer on single audio and visualise results, you can use Colab demo: 
 
-...
+https://colab.research.google.com/drive/1gUWkgj60BpZ3R2eyvMwH9dI6tyES3pve?usp=sharing
 
-To infer on folder of audios:
+To infer locally on folder of audios:
 
-1. Build a docker container: ``./build.sh``
+1. Extract files from https://drive.google.com/file/d/11BviuE9JyhniwfjR2KgwaOUGghmRL--f/view?usp=sharing to the cloned repository. The archive contains trained models and logs.
 
-2. Be sure to mount desired folder to ``/root/infer`` by editing ``run.sh`` and changing the ``TypesConfig.infer`` audio type in ``config.py`` if needed.
+2. Build a docker container: ``./build.sh``
 
-3. Start docker: ``./run.sh``
+3. Be sure to mount desired folder to ``/root/infer`` by editing ``run.sh`` and changing the ``TypesConfig.infer`` audio type in ``config.py`` if needed.
 
-4. Run ``python infer.py --model ...``
+4. Start docker: ``./run.sh``
 
-5. The output file with predicted VAD scores is ``meta/pred.txt``
+5. Run ``python infer.py --model runs/Jul10_17-03-12_ba66687a0ca5/models/94.pt``
+
+6. The output file with predicted VAD scores is ``meta/pred.txt``
 
 ## Training steps
 
@@ -40,13 +42,13 @@ To infer on folder of audios:
 
 5. Create files with lists of audios which are going to be used in training/validation. Each line must be a path to an audio file from the dataset root (``/root/audios``). You can use these commands:
 
-```
-cd /root/audios
-for f in dev-clean/*/*/*.flac; do echo $f >> /root/workdir/lists/dev-clean.txt; done
-for f in train-clean-100/*/*/*.flac; do echo $f >> /root/workdir/lists/train-clean-100.txt; done
-for f in train-clean-360/*/*/*.flac; do echo $f >> /root/workdir/lists/train-clean-360.txt; done
-cd /root/workdir
-```
+    ```
+    cd /root/audios
+    for f in dev-clean/*/*/*.flac; do echo $f >> /root/workdir/lists/dev-clean.txt; done
+    for f in train-clean-100/*/*/*.flac; do echo $f >> /root/workdir/lists/train-clean-100.txt; done
+    for f in train-clean-360/*/*/*.flac; do echo $f >> /root/workdir/lists/train-clean-360.txt; done
+    cd /root/workdir
+    ```
 
 6. Augment files from created lists and create train/val protocols:
 
