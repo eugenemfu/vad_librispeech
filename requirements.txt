@@ -1,0 +1,11 @@
+numpy
+scipy
+matplotlib
+jupyterlab
+scikit-learn
+torchaudio
+torch
+speechbrain
+textgrid
+tqdm
+tensorboard
