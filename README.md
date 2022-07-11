@@ -1,6 +1,6 @@
 # VAD trained on LibriSpeech
 
-Review, architecture and experiment description: ...
+Review, architecture and experiment description: https://docs.google.com/document/d/1uV686fhcsOs34TsNei6EP5ew4OlQMhAXXmXE4Ccg7Pc/edit?usp=sharing
 
 Test data predictions: https://drive.google.com/file/d/11eFC9ap7OSdO3oFfBHB_hb33-LYvlMub/view?usp=sharing
 
