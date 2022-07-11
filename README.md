@@ -1,12 +1,18 @@
-# VAD model trained on LibriSpeech
+# VAD trained on LibriSpeech
+
+Review, architecture and experiment description: ...
+
+Test data predictions: https://drive.google.com/file/d/11eFC9ap7OSdO3oFfBHB_hb33-LYvlMub/view?usp=sharing
+
+Thresholds: 0.8716 for EER, 0.1775 for FR=1%, 0.9953 for FA=1%.
+
+Colab demo: https://colab.research.google.com/drive/1gUWkgj60BpZ3R2eyvMwH9dI6tyES3pve?usp=sharing
 
 ## Inference steps
 
-To infer on single audio and visualise results, you can use Colab demo: 
+To infer on single audio and visualise results, you can use Colab demo stated above.
 
-https://colab.research.google.com/drive/1gUWkgj60BpZ3R2eyvMwH9dI6tyES3pve?usp=sharing
-
-To infer locally on folder of audios:
+To infer locally on folder do these steps:
 
 1. Extract files from https://drive.google.com/file/d/11BviuE9JyhniwfjR2KgwaOUGghmRL--f/view?usp=sharing to the cloned repository. The archive contains trained models and logs.
 
